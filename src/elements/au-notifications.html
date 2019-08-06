@@ -1,0 +1,55 @@
+<template>
+  <require from="./au-notifications.css"></require>
+
+  <div class="notification-panel ${ active? 'active': ''}">
+    
+    <div class="au-notification-header">
+        <i  class="back material-icons" 
+            click.delegate="close()"
+            
+          >
+          arrow_forward
+        </i>
+      <hgroup>
+        <h2>Notificaciones</h2>
+      </hgroup>
+
+    </div>
+
+    <div class="au-notification" repeat.for="notification of notifications">
+      <a 
+        href = "${notification.url? notification.url : '#/' + notification.fragment}"
+        
+      >
+        <div class="au-notification-title">
+          ${notification.title}
+        </div>
+
+        <div class="au-notification-text">
+            ${notification.text}
+        </div>
+
+      </a>
+    </div>
+
+  </div>
+
+  <div class="single-notifications au-stagger">
+    <div class="au-notification au-animate animate-slide-in-right animate-slide-out-right" repeat.for="notification of singleNotifications">
+      <a 
+        href = "${notification.url? notification.url : '#/' + notification.fragment}"
+        
+      >
+        <div class="au-notification-title">
+          ${notification.title}
+        </div>
+
+        <div class="au-notification-text">
+            ${notification.text}
+        </div>
+
+      </a>
+    </div>
+  </div>
+
+</template>
