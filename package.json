@@ -1,5 +1,5 @@
 {
-  "name": "au-notifications",
+  "name": "@cgalvar/au-notifications",
   "description": "An Aurelia plugin project.",
   "version": "0.1.0",
   "repository": {
